@@ -145,6 +145,8 @@ function winGame(){
         hangmanPicture.classList.add("fade-in");
 
         hangmanPicture.src = 'images/victory.gif';
+        hangmanPicture.classList.add("scalePic");
+
         // playAudio();
         
     }
@@ -160,6 +162,8 @@ function loseGame(){
         showHint.classList.add("hide");
         hangmanPicture.classList.add("fade-in");
         hangmanPicture.src = 'images/defeat.gif';
+        hangmanPicture.classList.add("scalePic");
+
         // playAudio();
     }
 }
@@ -168,10 +172,6 @@ function picUpdate(){
     hangmanPicture.src = 'images/' + mistakes + '.jpg';
 }
 
-function playAudio(){
-    let audio = Audio("audio/victory.mp3");
-    audio.play();
-}
 
 function reset(){
     mistakes = 0;
