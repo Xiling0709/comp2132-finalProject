@@ -1,0 +1,65 @@
+<!-- Xiling Cheng (A01164884) Final Project Hangman-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP2132-Final Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src ="scripts/scripts.js" defer="defer"></script> 
+    <script src = "scripts/jquery-3.4.1.min.js" defer="defer"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <h2 class="site-title"><a>Hangman Game</a></h2>
+    </header>
+
+    <main>
+        <div class = "container">
+            <h3>Countries in World Cup Qatar 2022</h3>
+            <div class="fade-in">
+                <img id= "hangmanPic" src="images/0.JPG" alt="">
+            </div>
+            
+            <div class="wordOutput" id="wordOutput">
+                The guess output goes here
+            </div>
+
+            <div >
+                <!-- <button id="hint">Hint</button> -->
+                <p class ="playList hide" id="hintText">I am the hint text</p>
+            </div>
+           
+
+            <div class="guessLives">
+                Incorrect guesses: <span id = "mistakes">0</span>/<span id="maxLives"></span>
+            </div>
+
+            <div class="keyboard" id="keyboard">
+                
+            </div>
+            
+            <div id ="newGameContainer" class ="newGame hide" onclick="play()">
+                <audio id="audio" src="audio/defeat.mp3"></audio>
+                <button class ="replay" id="replay" onclick="reset()">Play Again</button>
+            </div>
+        </div>
+    </main>
+</body>
+<footer>
+
+</footer>
+
+
+</html>

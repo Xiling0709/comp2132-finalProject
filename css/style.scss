@@ -1,0 +1,312 @@
+/* Xiling Cheng (A01164884) Final Project - CSS*/
+
+@charset "utf-8";
+$primary_color: white;
+
+
+@mixin rounded-shaded-box($xoffset, $yoffset,$rounded-corners, $border-color, $border-style){
+    box-shadow:$xoffset $yoffset 10px #5d5d5d;	  
+    border-radius:$rounded-corners;    
+    border:3px solid $border-color;  
+    $border-style: double;  
+}
+
+.fade-in {
+    animation: fadeIn 5s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    opacity: 1;
+
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.2;
+    background-color: #F6F1EB;
+    color: #40614B;
+    display: grid;
+    place-items: center;
+    // background-image: url('images/0.jpg');
+    // background-position: center;
+    // background-size: cover;
+    // position: relative;
+
+
+}
+
+header {
+    justify-content: center;
+    // min-height: 10vh;
+    width:100%;
+}
+
+.site-title {
+    font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    color: #81814b;
+    font-size: 2.4rem;
+    text-align: center;
+    margin:10px;
+
+}
+
+h3{
+    text-align: center;
+}
+// .site-title a {
+//     text-decoration: none;
+//     font-size: 2.2rem;
+// }
+
+
+/*Added pseudo selectors */
+a:link {
+    color: forestgreen;
+    
+}
+
+a:visited {
+    color: rgb(146, 143, 143)
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration-color: #dd9e50;
+}
+
+a:active {
+    color:#de94bb
+}
+
+.wordOutput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:#40614B;
+}
+
+
+.btn{
+    @include rounded-shaded-box(1px,1px,20px, $primary_color,double);
+
+    background-color: #40614B;
+    height:45px;
+    width:10%;
+    max-width: 100px;
+    margin:3px;
+    color:#fff;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    // border-radius: 20%;
+    transition-duration: 0.5s;
+    // cursor: pointer;
+    // border:2px solid ;
+
+}
+
+.btn:hover{
+    background-color: #d7d7b9;
+    color:#40614B;
+    // cursor: pointer;   
+}
+
+.disableEffect{
+    opacity: 0.6;
+    cursor: not-allowed;
+   
+}
+#keyboard{
+    justify-content: center;
+    max-width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+#delete{
+    font-size: 0.8rem;
+    width: 70px;
+}
+
+.newGame{
+    display: flex;
+    flex-direction: column;
+    // padding:1.5rem;
+    margin: 20px;
+    text-align: center;
+    align-items: center;
+
+}
+.loseColor{
+    color: red;
+}
+.hide{
+    display: none;
+}
+
+.replay{
+    background-color: #40614B;
+    border: none;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin: .5rem;
+    font-size: 1rem;
+    color: #fff;
+    width:150px;
+    height: 40px;
+    border-radius: 0.5rem;
+    transition-duration: 0.8s;
+    cursor: pointer;
+
+
+}
+
+
+.replay:hover{
+    background-color: #d7d7b9;
+    color:#40614B;
+    // cursor: pointer;   
+}
+
+#hint{
+    background-color: #81814b;
+    border: none;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin: .5rem;
+    font-size: 0.8rem;
+    color: #fff;
+    width:100px;
+    height: 35px;
+    border-radius: 0.5rem;
+
+}
+
+.guessLives{
+    @include rounded-shaded-box(10px, 10px,20px, $primary_color,double);
+
+    text-align: center;
+    color:#fff;
+
+    padding: .5rem ;
+    margin: .5rem;
+    background-color: darkred;
+    // border-radius: 10px;
+    padding: 10px;
+    margin: 30px auto ;
+    max-width:55%;
+    max-height: 100%;
+ 
+}
+
+#hintText{
+
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: darkred;
+    font-weight: 800;
+    
+}
+
+
+#hangmanPic{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    opacity: 50;
+    filter: alpha(opacity=40);
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+footer nav {
+    justify-content: center;
+    display: inline-block;
+    padding: 30px 20px;
+    position: relative;
+    max-width: 1000px;
+    min-width: 400px;
+
+
+}
+footer nav ul li{
+    list-style: none;
+    padding: 10px 20px;
+    // text-underline: #627373;
+
+}
+
+footer nav p{
+    padding: 10px 20px;
+    
+}
+
+#copyright{
+   
+    margin-right: auto;
+    margin-left: auto;
+    padding: 70px;
+}
+
+
+@media screen and (min-width: 700px) {
+    .part1-col{
+        text-align: center;
+    }
+    
+}
+@media (max-width: 700px) {
+    .news{
+        flex-direction: column;
+    }
+  
+}
